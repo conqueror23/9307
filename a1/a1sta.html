@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+           function change_text(content){
+                content.innerHTML='Calculation';
+            }
+            
+            function change_border(tu){
+                tu.border:1;
+                
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+     
+        <h1 id="header" onclick="change_text(this)">Monthly mortgage's calculation </h1>
+        
+        <form action="a1p.php" method="POST">
+            <table border="1">
+                <tr>
+                    <th>
+                        <img src="mortgage.jpg" style="height: 100px;width: 150px" >
+                    </th>
+                    <th>
+                        <img src="interest rate.jpg" style="height: 100px;width: 150px">
+                    </th>
+                    <th>
+                        <img src="years1.jpg" style="height: 100px;width: 150px">
+                    </th>
+             
+                </tr>
+                <tr>
+                    <td>
+                        Mortgage:<input type="text" name="mortgage" >
+                    </td>
+                     <td>
+                         Interest rate:<input type="text" name="interest_rate" >
+                    </td>
+                     <td>
+                         Years:<input type="text" name="years" >
+                    </td>
+                     <td>
+                         <input type="submit">
+                    </td>
+             
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
