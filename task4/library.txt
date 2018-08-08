@@ -1,0 +1,45 @@
+create database LIB;
+use LIB;
+
+CREATE TABLE `records` (
+  `record_id` integer(10) auto_increment,
+  `user_id` integer(10),
+  `book_id` integer(10),
+  `borrow_date` date,
+  `borrow_ type` varchar(10),
+  `return_date` date,
+  PRIMARY KEY (`record_id`),
+  KEY `FK` (`user_id`, `book_id`)
+);
+
+CREATE TABLE `users` (
+  `user_id` integer(10) auto_increment,
+  `user_name` varchar(10),
+  `password` varchar(10),
+  `card_number` integer(16),
+  PRIMARY KEY (`user_id`)
+);
+
+CREATE TABLE `books` (
+  `book_id` integer(10) auto_increment,
+  `book_type` varchar(10),
+  `book_name` varchar(10),
+  `validate` tinyint(1),
+  PRIMARY KEY (`book_id`)
+);
+
+insert into users (user_name, password) values ('josh','a');
+insert into users (user_name, password) values ('data','a');
+insert into users (user_name, password) values ('test','a');
+insert into users (user_name, password) values ('job','a');
+insert into users (user_name, password) values ('jh','a');
+
+insert into books (book_type,book_name,`validate` ) values ('medic','nose',false);
+insert into books (book_type,book_name,`validate` ) values ('comp','python',false);
+insert into books (book_type,book_name,`validate` ) values ('communi','signal',false);
+insert into books (book_type,book_name,`validate` ) values ('communi','FURY',True);
+insert into books (book_type,book_name,`validate` ) values ('amuse','PUBG',True);
+
+insert into records(user_id,book_id,return_date) values (1,2,'2018-02-02');
+insert into records(user_id,book_id,return_date) values (2,1,'2018-12-02');
+insert into records(user_id,book_id,return_date) values (1,3,'2018-02-04');
